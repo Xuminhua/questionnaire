@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Microsoft YaHei', Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -52,11 +52,11 @@ header h1 {
     border-radius: 10px;
     padding: 25px;
     margin-bottom: 25px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #FF6B35;
 }
 
 .question-block h3 {
-    color: #667eea;
+    color: #FF6B35;
     margin-bottom: 10px;
     font-size: 14px;
     font-weight: normal;
@@ -102,8 +102,8 @@ header h1 {
 }
 
 .question-block label:hover {
-    background: #e3e9ff;
-    border-color: #667eea;
+    background: #FFE5D9;
+    border-color: #FF6B35;
 }
 
 .question-block input[type="radio"] {
@@ -118,13 +118,13 @@ header h1 {
 }
 
 .question-block label:has(input[type="radio"]:checked) {
-    background: #667eea;
+    background: #FF6B35;
     color: white;
-    border-color: #667eea;
+    border-color: #FF6B35;
 }
 
 .submit-btn, .reset-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
     color: white;
     border: none;
     padding: 15px 40px;
@@ -139,7 +139,7 @@ header h1 {
 
 .submit-btn:hover, .reset-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
 }
 
 .submit-btn:active, .reset-btn:active {
@@ -171,7 +171,7 @@ header h1 {
 }
 
 .risk-medium {
-    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    background: linear-gradient(135deg, #FFB347 0%, #FF8C42 100%);
     color: #fff;
 }
 

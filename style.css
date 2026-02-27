@@ -1,114 +1,70 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* 自定义样式 - 配合 Bootstrap 5 使用 */
+/* 爱必妥橙色主题配色 */
 
+/* 背景渐变 - 橙色系 */
 body {
-    font-family: 'Microsoft YaHei', Arial, sans-serif;
     background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
     min-height: 100vh;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
 }
 
-.container {
+/* 隐藏原生单选框 */
+.form-check-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* 选项标签样式 */
+.option-label {
+    cursor: pointer;
+    transition: all 0.3s ease;
     background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
-    width: 100%;
-    padding: 40px;
-    margin: 20px;
+    font-weight: 500;
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
+.option-label:hover {
+    background: #ffe5d9;
+    border-color: #FF6B35 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    color: #333;
-    font-size: 32px;
-    margin-bottom: 10px;
+/* 选中状态 - 橙色渐变 */
+.form-check-input:checked + .option-label {
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+    color: white;
+    border-color: #FF6B35 !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
 }
 
-.subtitle {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 8px;
-}
-
-.subtitle.note {
-    font-size: 14px;
-    color: #888;
-    line-height: 1.6;
-}
-
-.question-block {
-    background: #f8f9fa;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-left: 4px solid #FF6B35;
-}
-
-.question-block h3 {
-    color: #FF6B35;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.question-number {
-    font-weight: bold;
-}
-
-.question-block h4 {
-    color: #333;
-    margin-bottom: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.5;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    position: relative;
-}
-
-/* Tooltip icon */
+/* Tooltip 图标样式 - 橙色 */
 .tooltip-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
-    background: #FF6B35;
-    color: white;
-    border-radius: 50%;
-    font-size: 14px;
-    font-weight: bold;
     cursor: help;
-    flex-shrink: 0;
     position: relative;
-    margin-top: 2px;
+    color: #FF6B35;
     transition: all 0.3s ease;
 }
 
 .tooltip-icon:hover {
-    background: #FF8C42;
-    transform: scale(1.1);
+    color: #E8590C;
+    transform: scale(1.15);
 }
 
-/* Tooltip bubble */
+.tooltip-icon i {
+    font-size: 20px;
+}
+
+/* Tooltip 气泡 */
 .tooltip-icon::before {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 15px);
     right: 0;
-    background: #333;
+    background: #2c3e50;
     color: white;
     padding: 12px 16px;
     border-radius: 8px;
@@ -120,203 +76,147 @@ header h1 {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 1050;
     pointer-events: none;
+    transform: translateY(5px);
 }
 
-/* Tooltip arrow */
+/* Tooltip 箭头 */
 .tooltip-icon::after {
     content: '';
     position: absolute;
-    bottom: calc(100% + 2px);
+    bottom: calc(100% + 7px);
     right: 8px;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid #333;
+    border-top: 8px solid #2c3e50;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1050;
 }
 
 .tooltip-icon:hover::before,
 .tooltip-icon:hover::after {
     opacity: 1;
     visibility: visible;
-}
-
-.question-desc {
-    color: #666;
-    font-size: 14px;
-    line-height: 1.7;
-    margin-bottom: 10px;
-}
-
-.options {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.question-block label {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 25px;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid #ddd;
-    font-weight: 500;
-    min-width: 100px;
-    justify-content: center;
-}
-
-.question-block label:hover {
-    background: #FFE5D9;
-    border-color: #FF6B35;
-}
-
-.question-block input[type="radio"] {
-    margin-right: 8px;
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-}
-
-.question-block input[type="radio"]:checked + span {
-    font-weight: bold;
-}
-
-.question-block label:has(input[type="radio"]:checked) {
-    background: #FF6B35;
-    color: white;
-    border-color: #FF6B35;
-}
-
-.submit-btn, .reset-btn {
-    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
-    color: white;
-    border: none;
-    padding: 15px 40px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 20px;
-    transition: transform 0.2s ease;
-    font-weight: bold;
-}
-
-.submit-btn:hover, .reset-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-}
-
-.submit-btn:active, .reset-btn:active {
     transform: translateY(0);
 }
 
-.result {
-    text-align: center;
-    padding: 30px;
+/* 卡片动画 */
+.card {
+    transition: all 0.3s ease;
 }
 
-.result h2 {
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 28px;
+.card:hover {
+    transform: translateY(-2px);
 }
 
+/* 卡片边框橙色强调 */
+.border-start.border-primary {
+    border-left-width: 4px !important;
+    border-left-color: #FF6B35 !important;
+}
+
+/* 风险等级样式 */
 .risk-level {
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: bold;
-    margin: 30px 0;
     padding: 30px;
     border-radius: 15px;
+    margin: 20px 0;
 }
 
 .risk-low {
     background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
     color: #0a5f38;
+    box-shadow: 0 4px 20px rgba(132, 250, 176, 0.3);
 }
 
 .risk-medium {
-    background: linear-gradient(135deg, #FFB347 0%, #FF8C42 100%);
+    background: linear-gradient(135deg, #FFA84D 0%, #FF8C42 100%);
     color: #fff;
+    box-shadow: 0 4px 20px rgba(255, 140, 66, 0.3);
 }
 
 .risk-high {
     background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
     color: white;
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
 }
 
 .risk-description {
     background: #f8f9fa;
     padding: 25px;
     border-radius: 10px;
-    margin: 20px 0;
     line-height: 1.8;
     color: #555;
-    font-size: 16px;
+    text-align: left;
 }
 
+.risk-description ul {
+    padding-left: 20px;
+}
+
+.risk-description li {
+    margin-bottom: 8px;
+}
+
+/* 隐藏类 */
 .hidden {
-    display: none;
+    display: none !important;
 }
 
-.reset-btn {
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    margin-top: 20px;
+/* 进度提示 - 橙色徽章 */
+.badge {
+    letter-spacing: 0.5px;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 20px;
-    }
+.badge.bg-primary {
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%) !important;
+}
 
-    header h1 {
-        font-size: 24px;
-    }
+/* Bootstrap 主色调覆盖 - 橙色系 */
+.text-primary {
+    color: #FF6B35 !important;
+}
 
-    .subtitle {
-        font-size: 14px;
-    }
+.border-primary {
+    border-color: #FF6B35 !important;
+}
 
-    .subtitle.note {
-        font-size: 13px;
-    }
+.alert-info {
+    background-color: #fff3e6;
+    border-color: #ffddb3;
+    color: #d94e1f;
+}
 
-    .question-block {
-        padding: 15px;
-    }
+.alert-info .bi {
+    color: #FF6B35;
+}
 
-    .question-block h3 {
-        font-size: 13px;
-    }
+.alert-warning {
+    background-color: #fff8e6;
+    border-color: #ffe8b3;
+    color: #c25100;
+}
 
-    .question-block h4 {
-        font-size: 16px;
-    }
+.alert-warning .bi {
+    color: #FF8C42;
+}
 
-    .question-desc {
-        font-size: 13px;
-    }
-
-    .options {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .question-block label {
-        width: 100%;
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.1rem;
     }
 
     .risk-level {
-        font-size: 36px;
+        font-size: 2rem;
+        padding: 20px;
     }
 
     /* 移动端 tooltip 样式调整 */
@@ -324,9 +224,13 @@ header h1 {
         width: 280px;
         right: auto;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(5px);
         font-size: 12px;
         padding: 10px 12px;
+    }
+
+    .tooltip-icon:hover::before {
+        transform: translateX(-50%) translateY(0);
     }
 
     .tooltip-icon::after {
@@ -334,4 +238,96 @@ header h1 {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    /* 移动端选项垂直排列 */
+    .d-flex.gap-3 {
+        flex-direction: column !important;
+    }
+}
+
+/* 按钮悬停效果 - 橙色渐变 */
+.btn-primary {
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #FF7A2E 0%, #E8590C 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+}
+
+.btn-secondary {
+    font-weight: 600;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 标题图标橙色 */
+.display-5 .bi {
+    color: #FF6B35;
+}
+
+/* 次要按钮悬停效果 */
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(108, 117, 125, 0.3);
+}
+
+/* 选项图标颜色 */
+.option-label .bi-check-circle {
+    color: #28a745;
+}
+
+.option-label .bi-x-circle {
+    color: #dc3545;
+}
+
+.form-check-input:checked + .option-label .bi-check-circle,
+.form-check-input:checked + .option-label .bi-x-circle {
+    color: white;
+}
+
+/* 卡片标题问号图标悬停放大 */
+.card-title {
+    position: relative;
+}
+
+/* 页面顶部卡片特殊样式 */
+.card.shadow-lg {
+    border-top: 5px solid #FF6B35;
+}
+
+/* 结果区域特殊样式 */
+#result .card {
+    border-top: 5px solid #FF6B35;
+}
+
+/* 渐变文字效果（可选） */
+.gradient-text {
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }

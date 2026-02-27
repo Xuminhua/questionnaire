@@ -104,13 +104,23 @@ function displayResult(result) {
     // 设置风险等级
     const riskLevelDiv = document.getElementById('riskLevel');
     riskLevelDiv.className = `risk-level ${result.class}`;
-    riskLevelDiv.textContent = result.level;
+
+    // 添加图标到风险等级
+    let icon = '';
+    if (result.class === 'risk-low') {
+        icon = '<i class="bi bi-emoji-smile-fill me-2"></i>';
+    } else if (result.class === 'risk-medium') {
+        icon = '<i class="bi bi-exclamation-triangle-fill me-2"></i>';
+    } else {
+        icon = '<i class="bi bi-exclamation-octagon-fill me-2"></i>';
+    }
+    riskLevelDiv.innerHTML = icon + result.level;
 
     // 设置描述
     document.getElementById('riskDescription').innerHTML = result.description;
 
     // 滚动到结果区域
-    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // 重置问卷

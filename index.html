@@ -61,116 +61,304 @@
                         </div>
                     </div>
 
-            <!-- 问题2 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 2/10</span></h3>
-                <h4>您是否注意到大便中有血？<span class="tooltip-icon" data-tooltip="直肠出血最常见的原因是痔疮（痔），但如果排出较暗（陈旧）的血，可能需要引起关注。">ⓘ</span></h4>
-                <p class="question-desc">血可能是鲜红色，也可能是颜色发黑、像柏油一样黏稠、且不易冲走的血便。</p>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="1"> 是</label>
-                    <label><input type="radio" name="q2" value="0"> 否</label>
+                    <!-- 问题2 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 2/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否注意到大便中有血？
+                                <span class="tooltip-icon ms-2" data-tooltip="直肠出血最常见的原因是痔疮（痔），但如果排出较暗（陈旧）的血，可能需要引起关注。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">血可能是鲜红色，也可能是颜色发黑、像柏油一样黏稠、且不易冲走的血便。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q2_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q2_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题3 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 3/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否在进食后出现腹部不适或腹胀？
+                                <span class="tooltip-icon ms-2" data-tooltip="腹部绞痛和腹胀很常见，可能由胃部不适、胀气或食用某些食物引起。若您频繁出现原因不明的绞痛和腹胀，这可能是结肠癌的信号之一，但这些症状更常见的原因是其他健康问题。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">您可能会有腹痛、腹胀或经常听到肠鸣（咕噜声）。您也可能出现排便困难。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q3_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q3_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题4 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 4/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否在没有明确原因的情况下突然体重下降？
+                                <span class="tooltip-icon ms-2" data-tooltip="体重突然下降可能是由于肠道梗阻，或可能与肿瘤有关。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">如果您的食欲和进食量没有变化，但体重仍然下降，这可能需要引起关注。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q4_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q4_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题5 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 5/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您的食欲是否下降，是否感到恶心或出现呕吐？
+                                <span class="tooltip-icon ms-2" data-tooltip="某些癌性肿瘤会释放激素，使您在实际上并未吃饱时也产生饱腹感。癌症也可能引起影响食欲的症状，如恶心、疼痛、压力、抑郁和脱水。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">上述情况是否已持续超过几天，且没有明显原因（例如食物中毒或病毒感染）？</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q5_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q5_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题6 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 6/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您的面色是否发生变化——例如皮肤更苍白，或看起来有黄疸（皮肤发黄）？
+                                <span class="tooltip-icon ms-2" data-tooltip="某些癌症会影响红细胞的生成，导致贫血，从而使人看起来更苍白。黄疸会使眼睛和皮肤看起来略微发黄，是多种癌症较常见的早期症状之一。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">也许有人曾评论您看起来脸色苍白或发黄。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q6_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q6" id="q6_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q6_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题7 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 7/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否感到异常疲劳、缺乏精力？
+                                <span class="tooltip-icon ms-2" data-tooltip="持续且明显的极度疲劳可能是癌症的症状之一。这是因为肿瘤生长会消耗身体的营养，让您感到精力被"抽空"。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">这里的"疲劳"指的是强烈的疲惫感，即使睡眠或休息后也无法缓解。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q7_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q7" id="q7_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q7_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题8 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 8/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您的家人中是否有人患过肠癌、切除过息肉，或患有克罗恩病、自身免疫性溃疡性结肠炎或乳糜泻等炎症性疾病？
+                                <span class="tooltip-icon ms-2" data-tooltip="多数结直肠癌发生在没有结直肠癌家族史的人群中。然而，若一级亲属（父母、兄弟姐妹或子女）有结直肠癌病史，您的风险会增加。患有炎症性肠病并不意味着一定会患癌，但会提高风险水平。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">请考虑近亲血缘亲属已知的健康状况。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q8_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q8" id="q8_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q8_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题9 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 9/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否认为自己的生活方式不太健康？
+                                <span class="tooltip-icon ms-2" data-tooltip="吸烟、饮酒以及食用加工肉类等生活方式选择，会增加患癌风险。研究提示，2型糖尿病也会增加患癌风险。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">请考虑以下因素：体重/BMI、吸烟、饮酒、以红肉和加工食品为主的不健康饮食、2型糖尿病，以及是否经常运动。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q9_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q9" id="q9_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q9_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 问题10 -->
+                    <div class="card shadow-sm border-start border-primary border-4 mb-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <span class="badge bg-primary fs-6">问题 10/10</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3">
+                                您是否年龄在50岁及以上？
+                                <span class="tooltip-icon ms-2" data-tooltip="50岁及以上人群的风险更高——超过90%的结直肠癌（CRC）病例发生在50岁以上人群。建议进行筛查以便尽早且准确地发现问题。目前主要有两类检测：结肠镜检查，以及检测粪便中是否有血的检查。">
+                                    <i class="bi bi-info-circle-fill"></i>
+                                </span>
+                            </h5>
+                            <p class="text-muted mb-4">仅有39%的结直肠癌病例是在早期（癌症尚未扩散到其他组织之前）被发现。越早发现，诊断越准确，结局也往往更好。</p>
+                            <div class="d-flex gap-3">
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10_yes" value="1">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q10_yes">
+                                        <i class="bi bi-check-circle me-2"></i>是
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline flex-fill">
+                                    <input class="form-check-input" type="radio" name="q10" id="q10_no" value="0">
+                                    <label class="form-check-label w-100 p-3 border rounded text-center option-label" for="q10_no">
+                                        <i class="bi bi-x-circle me-2"></i>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg py-3">
+                            <i class="bi bi-send-fill me-2"></i>提交评估
+                        </button>
+                    </div>
+                </form>
+
+                <!-- 结果区域 -->
+                <div id="result" class="hidden">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body text-center py-5">
+                            <h2 class="mb-4"><i class="bi bi-clipboard-check me-2"></i>评估结果</h2>
+                            <div class="risk-level mb-4" id="riskLevel"></div>
+                            <div class="risk-description" id="riskDescription"></div>
+                            <div class="d-grid mt-4">
+                                <button onclick="resetQuiz()" class="btn btn-secondary btn-lg">
+                                    <i class="bi bi-arrow-counterclockwise me-2"></i>重新评估
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- 问题3 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 3/10</span></h3>
-                <h4>您是否在进食后出现腹部不适或腹胀？<span class="tooltip-icon" data-tooltip="腹部绞痛和腹胀很常见，可能由胃部不适、胀气或食用某些食物引起。若您频繁出现原因不明的绞痛和腹胀，这可能是结肠癌的信号之一，但这些症状更常见的原因是其他健康问题。">ⓘ</span></h4>
-                <p class="question-desc">您可能会有腹痛、腹胀或经常听到肠鸣（咕噜声）。您也可能出现排便困难。</p>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="1"> 是</label>
-                    <label><input type="radio" name="q3" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题4 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 4/10</span></h3>
-                <h4>您是否在没有明确原因的情况下突然体重下降？<span class="tooltip-icon" data-tooltip="体重突然下降可能是由于肠道梗阻，或可能与肿瘤有关。">ⓘ</span></h4>
-                <p class="question-desc">如果您的食欲和进食量没有变化，但体重仍然下降，这可能需要引起关注。</p>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="1"> 是</label>
-                    <label><input type="radio" name="q4" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题5 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 5/10</span></h3>
-                <h4>您的食欲是否下降，是否感到恶心或出现呕吐？<span class="tooltip-icon" data-tooltip="某些癌性肿瘤会释放激素，使您在实际上并未吃饱时也产生饱腹感。癌症也可能引起影响食欲的症状，如恶心、疼痛、压力、抑郁和脱水。">ⓘ</span></h4>
-                <p class="question-desc">上述情况是否已持续超过几天，且没有明显原因（例如食物中毒或病毒感染）？</p>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="1"> 是</label>
-                    <label><input type="radio" name="q5" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题6 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 6/10</span></h3>
-                <h4>您的面色是否发生变化——例如皮肤更苍白，或看起来有黄疸（皮肤发黄）？<span class="tooltip-icon" data-tooltip="某些癌症会影响红细胞的生成，导致贫血，从而使人看起来更苍白。黄疸会使眼睛和皮肤看起来略微发黄，是多种癌症较常见的早期症状之一。">ⓘ</span></h4>
-                <p class="question-desc">也许有人曾评论您看起来脸色苍白或发黄。</p>
-                <div class="options">
-                    <label><input type="radio" name="q6" value="1"> 是</label>
-                    <label><input type="radio" name="q6" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题7 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 7/10</span></h3>
-                <h4>您是否感到异常疲劳、缺乏精力？<span class="tooltip-icon" data-tooltip="持续且明显的极度疲劳可能是癌症的症状之一。这是因为肿瘤生长会消耗身体的营养，让您感到精力被"抽空"。">ⓘ</span></h4>
-                <p class="question-desc">这里的"疲劳"指的是强烈的疲惫感，即使睡眠或休息后也无法缓解。</p>
-                <div class="options">
-                    <label><input type="radio" name="q7" value="1"> 是</label>
-                    <label><input type="radio" name="q7" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题8 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 8/10</span></h3>
-                <h4>您的家人中是否有人患过肠癌、切除过息肉，或患有克罗恩病、自身免疫性溃疡性结肠炎或乳糜泻等炎症性疾病？<span class="tooltip-icon" data-tooltip="多数结直肠癌发生在没有结直肠癌家族史的人群中。然而，若一级亲属（父母、兄弟姐妹或子女）有结直肠癌病史，您的风险会增加。患有炎症性肠病并不意味着一定会患癌，但会提高风险水平。">ⓘ</span></h4>
-                <p class="question-desc">请考虑近亲血缘亲属已知的健康状况。</p>
-                <div class="options">
-                    <label><input type="radio" name="q8" value="1"> 是</label>
-                    <label><input type="radio" name="q8" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题9 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 9/10</span></h3>
-                <h4>您是否认为自己的生活方式不太健康？<span class="tooltip-icon" data-tooltip="吸烟、饮酒以及食用加工肉类等生活方式选择，会增加患癌风险。研究提示，2型糖尿病也会增加患癌风险。">ⓘ</span></h4>
-                <p class="question-desc">请考虑以下因素：体重/BMI、吸烟、饮酒、以红肉和加工食品为主的不健康饮食、2型糖尿病，以及是否经常运动。</p>
-                <div class="options">
-                    <label><input type="radio" name="q9" value="1"> 是</label>
-                    <label><input type="radio" name="q9" value="0"> 否</label>
-                </div>
-            </div>
-
-            <!-- 问题10 -->
-            <div class="question-block">
-                <h3><span class="question-number">问题 10/10</span></h3>
-                <h4>您是否年龄在50岁及以上？<span class="tooltip-icon" data-tooltip="50岁及以上人群的风险更高——超过90%的结直肠癌（CRC）病例发生在50岁以上人群。建议进行筛查以便尽早且准确地发现问题。目前主要有两类检测：结肠镜检查，以及检测粪便中是否有血的检查。">ⓘ</span></h4>
-                <p class="question-desc">仅有39%的结直肠癌病例是在早期（癌症尚未扩散到其他组织之前）被发现。越早发现，诊断越准确，结局也往往更好。</p>
-                <div class="options">
-                    <label><input type="radio" name="q10" value="1"> 是</label>
-                    <label><input type="radio" name="q10" value="0"> 否</label>
-                </div>
-            </div>
-
-            <button type="submit" class="submit-btn">提交评估</button>
-        </form>
-
-        <div id="result" class="result hidden">
-            <h2>评估结果</h2>
-            <div class="risk-level" id="riskLevel"></div>
-            <div class="risk-description" id="riskDescription"></div>
-            <button onclick="resetQuiz()" class="reset-btn">重新评估</button>
         </div>
     </div>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

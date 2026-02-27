@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>癌症风险评估问卷</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>结直肠癌症状自测问卷</h1>
+            <p class="subtitle">本症状自测是一项工具，可帮助您判断是否需要向专科医生寻求医疗咨询。问题简短易答，只需几分钟。</p>
+            <p class="subtitle note">需要特别说明的是，本测试并非用于作出诊断，而是提供关于常见肠癌症状的提示——这些症状可能需要医学关注。</p>
+            <p class="subtitle note">接受专业医疗照护，并尽早获得准确诊断，可提高后续治疗成功的机会。</p>
+        </header>
+
+        <form id="questionnaire">
+            <!-- 问题1 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 1/10</span></h3>
+                <h4>您是否存在排便不规律的情况？</h4>
+                <p class="question-desc">任何不同于平时规律排便的情况，都可能提示肠易激综合征（IBS）或其他状况。</p>
+                <p class="question-desc">这里所说的"排便不规律"，指的是：慢性便秘（3天内排便少于1次）或慢性腹泻（每天超过3次、量大、呈稀水样）。</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="1"> 是</label>
+                    <label><input type="radio" name="q1" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 2/10</span></h3>
+                <h4>您是否注意到大便中有血？</h4>
+                <p class="question-desc">直肠出血最常见的原因是痔疮（痔），但如果排出较暗（陈旧）的血，可能需要引起关注。</p>
+                <p class="question-desc">血可能是鲜红色，也可能是颜色发黑、像柏油一样黏稠、且不易冲走的血便。</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="1"> 是</label>
+                    <label><input type="radio" name="q2" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题3 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 3/10</span></h3>
+                <h4>您是否在进食后出现腹部不适或腹胀？</h4>
+                <p class="question-desc">腹部绞痛和腹胀很常见，可能由胃部不适、胀气或食用某些食物引起。若您频繁出现原因不明的绞痛和腹胀，这可能是结肠癌的信号之一，但这些症状更常见的原因是其他健康问题。</p>
+                <p class="question-desc">您可能会有腹痛、腹胀或经常听到肠鸣（咕噜声）。您也可能出现排便困难。</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="1"> 是</label>
+                    <label><input type="radio" name="q3" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题4 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 4/10</span></h3>
+                <h4>您是否在没有明确原因的情况下突然体重下降？</h4>
+                <p class="question-desc">体重突然下降可能是由于肠道梗阻，或可能与肿瘤有关。</p>
+                <p class="question-desc">如果您的食欲和进食量没有变化，但体重仍然下降，这可能需要引起关注。</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="1"> 是</label>
+                    <label><input type="radio" name="q4" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题5 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 5/10</span></h3>
+                <h4>您的食欲是否下降，是否感到恶心或出现呕吐？</h4>
+                <p class="question-desc">某些癌性肿瘤会释放激素，使您在实际上并未吃饱时也产生饱腹感。癌症也可能引起影响食欲的症状，如恶心、疼痛、压力、抑郁和脱水。</p>
+                <p class="question-desc">上述情况是否已持续超过几天，且没有明显原因（例如食物中毒或病毒感染）？</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="1"> 是</label>
+                    <label><input type="radio" name="q5" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题6 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 6/10</span></h3>
+                <h4>您的面色是否发生变化——例如皮肤更苍白，或看起来有黄疸（皮肤发黄）？</h4>
+                <p class="question-desc">某些癌症会影响红细胞的生成，导致贫血，从而使人看起来更苍白。黄疸会使眼睛和皮肤看起来略微发黄，是多种癌症较常见的早期症状之一。</p>
+                <p class="question-desc">也许有人曾评论您看起来脸色苍白或发黄。</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="1"> 是</label>
+                    <label><input type="radio" name="q6" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题7 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 7/10</span></h3>
+                <h4>您是否感到异常疲劳、缺乏精力？</h4>
+                <p class="question-desc">持续且明显的极度疲劳可能是癌症的症状之一。这是因为肿瘤生长会消耗身体的营养，让您感到精力被"抽空"。</p>
+                <p class="question-desc">这里的"疲劳"指的是强烈的疲惫感，即使睡眠或休息后也无法缓解。</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="1"> 是</label>
+                    <label><input type="radio" name="q7" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题8 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 8/10</span></h3>
+                <h4>您的家人中是否有人患过肠癌、切除过息肉，或患有克罗恩病、自身免疫性溃疡性结肠炎或乳糜泻等炎症性疾病？</h4>
+                <p class="question-desc">多数结直肠癌发生在没有结直肠癌家族史的人群中。然而，若一级亲属（父母、兄弟姐妹或子女）有结直肠癌病史，您的风险会增加。患有炎症性肠病并不意味着一定会患癌，但会提高风险水平。</p>
+                <p class="question-desc">请考虑近亲血缘亲属已知的健康状况。</p>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="1"> 是</label>
+                    <label><input type="radio" name="q8" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题9 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 9/10</span></h3>
+                <h4>您是否认为自己的生活方式不太健康？</h4>
+                <p class="question-desc">吸烟、饮酒以及食用加工肉类等生活方式选择，会增加患癌风险。研究提示，2型糖尿病也会增加患癌风险。</p>
+                <p class="question-desc">请考虑以下因素：体重/BMI、吸烟、饮酒、以红肉和加工食品为主的不健康饮食、2型糖尿病，以及是否经常运动。</p>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="1"> 是</label>
+                    <label><input type="radio" name="q9" value="0"> 否</label>
+                </div>
+            </div>
+
+            <!-- 问题10 -->
+            <div class="question-block">
+                <h3><span class="question-number">问题 10/10</span></h3>
+                <h4>您是否年龄在50岁及以上？</h4>
+                <p class="question-desc">50岁及以上人群的风险更高——超过90%的结直肠癌（CRC）病例发生在50岁以上人群。建议进行筛查以便尽早且准确地发现问题。目前主要有两类检测：结肠镜检查，以及检测粪便中是否有血的检查。</p>
+                <p class="question-desc">仅有39%的结直肠癌病例是在早期（癌症尚未扩散到其他组织之前）被发现。越早发现，诊断越准确，结局也往往更好。</p>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="1"> 是</label>
+                    <label><input type="radio" name="q10" value="0"> 否</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">提交评估</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>评估结果</h2>
+            <div class="risk-level" id="riskLevel"></div>
+            <div class="risk-description" id="riskDescription"></div>
+            <button onclick="resetQuiz()" class="reset-btn">重新评估</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

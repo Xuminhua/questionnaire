@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    margin: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.subtitle.note {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.question-block {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-left: 4px solid #667eea;
+}
+
+.question-block h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.question-number {
+    font-weight: bold;
+}
+
+.question-block h4 {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.question-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.question-block label {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+    font-weight: 500;
+    min-width: 100px;
+    justify-content: center;
+}
+
+.question-block label:hover {
+    background: #e3e9ff;
+    border-color: #667eea;
+}
+
+.question-block input[type="radio"] {
+    margin-right: 8px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.question-block input[type="radio"]:checked + span {
+    font-weight: bold;
+}
+
+.question-block label:has(input[type="radio"]:checked) {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.submit-btn, .reset-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+    font-weight: bold;
+}
+
+.submit-btn:hover, .reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active, .reset-btn:active {
+    transform: translateY(0);
+}
+
+.result {
+    text-align: center;
+    padding: 30px;
+}
+
+.result h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.risk-level {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.risk-low {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: #0a5f38;
+}
+
+.risk-medium {
+    background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+    color: #fff;
+}
+
+.risk-high {
+    background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+    color: white;
+}
+
+.risk-description {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: #555;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .subtitle.note {
+        font-size: 13px;
+    }
+
+    .question-block {
+        padding: 15px;
+    }
+
+    .question-block h3 {
+        font-size: 13px;
+    }
+
+    .question-block h4 {
+        font-size: 16px;
+    }
+
+    .question-desc {
+        font-size: 13px;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .question-block label {
+        width: 100%;
+    }
+
+    .risk-level {
+        font-size: 36px;
+    }
+}

@@ -139,6 +139,9 @@ function resetQuiz() {
 }
 
 // 移动端tooltip位置调整 - 确保不超出卡片且最大宽度300px
+let activeTooltipTimer = null;
+let activeTooltipIcon = null;
+
 function adjustTooltipPosition() {
     if (window.innerWidth <= 768) {
         const tooltipIcons = document.querySelectorAll('.tooltip-icon');
@@ -149,17 +152,54 @@ function adjustTooltipPosition() {
                 adjustSingleTooltip(this);
             });
 
-            // 移动端触摸支持
+            // 移动端触摸支持 - 点击切换显示/隐藏
             icon.addEventListener('touchstart', function(e) {
+                e.preventDefault();
                 e.stopPropagation();
+
+                // 如果当前tooltip已经激活，点击后立即关闭
+                if (this.classList.contains('tooltip-active')) {
+                    this.classList.remove('tooltip-active');
+                    if (activeTooltipTimer) {
+                        clearTimeout(activeTooltipTimer);
+                        activeTooltipTimer = null;
+                    }
+                    activeTooltipIcon = null;
+                    return;
+                }
+
+                // 关闭之前打开的tooltip
+                if (activeTooltipIcon && activeTooltipIcon !== this) {
+                    activeTooltipIcon.classList.remove('tooltip-active');
+                    if (activeTooltipTimer) {
+                        clearTimeout(activeTooltipTimer);
+                    }
+                }
+
+                // 打开当前tooltip
                 adjustSingleTooltip(this);
                 this.classList.add('tooltip-active');
+                activeTooltipIcon = this;
 
                 // 3秒后自动关闭
-                setTimeout(() => {
+                activeTooltipTimer = setTimeout(() => {
                     this.classList.remove('tooltip-active');
+                    activeTooltipIcon = null;
+                    activeTooltipTimer = null;
                 }, 3000);
             });
+        });
+
+        // 点击页面其他地方关闭tooltip
+        document.addEventListener('touchstart', function(e) {
+            if (activeTooltipIcon && !e.target.closest('.tooltip-icon')) {
+                activeTooltipIcon.classList.remove('tooltip-active');
+                if (activeTooltipTimer) {
+                    clearTimeout(activeTooltipTimer);
+                    activeTooltipTimer = null;
+                }
+                activeTooltipIcon = null;
+            }
         });
     }
 }
@@ -174,8 +214,8 @@ function adjustSingleTooltip(icon) {
     // 计算icon右边缘到卡片左边缘的距离（这是tooltip向左延伸的最大空间）
     const availableWidth = iconRect.right - cardRect.left - 20; // 减去20px作为左侧padding
 
-    // tooltip宽度 = min(300px, 可用宽度, 卡片宽度-40px)
-    const tooltipWidth = Math.min(300, availableWidth, cardRect.width - 40);
+    // tooltip宽度 = max(200px, min(300px, 可用宽度, 卡片宽度-40px))
+    const tooltipWidth = Math.max(200, Math.min(300, availableWidth, cardRect.width - 40));
 
     // 设置CSS变量
     icon.style.setProperty('--tooltip-width', tooltipWidth + 'px');

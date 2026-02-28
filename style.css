@@ -219,9 +219,10 @@ body {
         padding: 20px;
     }
 
-    /* 移动端 tooltip 样式调整 - JavaScript动态计算宽度确保在卡片内，最大300px */
+    /* 移动端 tooltip 样式调整 - JavaScript动态计算宽度确保在卡片内，最大300px，最小200px */
     .tooltip-icon::before {
         width: var(--tooltip-width, min(280px, calc(100vw - 60px)));
+        min-width: 200px;
         bottom: auto;
         top: calc(100% + 12px);
         right: 0;

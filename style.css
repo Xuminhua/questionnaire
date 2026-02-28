@@ -210,6 +210,27 @@ body {
 
 /* 响应式调整 */
 @media (max-width: 768px) {
+    /* 确保移动端容器居中且左右边距相等 */
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* 确保row不产生额外边距 */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 确保column的padding对称 */
+    .col-lg-10 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
     .card-title {
         font-size: 1.1rem;
     }

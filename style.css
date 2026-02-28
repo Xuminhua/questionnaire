@@ -219,24 +219,40 @@ body {
         padding: 20px;
     }
 
-    /* 移动端 tooltip 样式调整 */
+    /* 移动端 tooltip 样式调整 - JavaScript动态计算宽度确保在卡片内，最大300px */
     .tooltip-icon::before {
-        width: 280px;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%) translateY(5px);
+        width: var(--tooltip-width, min(280px, calc(100vw - 60px)));
+        bottom: auto;
+        top: calc(100% + 12px);
+        right: 0;
+        left: auto;
+        transform: translateX(0) translateY(-5px);
         font-size: 12px;
         padding: 10px 12px;
+        white-space: normal;
+        text-align: left;
+        line-height: 1.6;
     }
 
-    .tooltip-icon:hover::before {
-        transform: translateX(-50%) translateY(0);
+    .tooltip-icon:hover::before,
+    .tooltip-icon.tooltip-active::before {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .tooltip-icon::after {
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: auto;
+        top: calc(100% + 4px);
+        right: 10px;
+        left: auto;
+        transform: rotate(180deg);
+    }
+
+    .tooltip-icon:hover::after,
+    .tooltip-icon.tooltip-active::after {
+        opacity: 1;
+        visibility: visible;
     }
 
     /* 移动端选项垂直排列 */

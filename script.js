@@ -138,6 +138,55 @@ function resetQuiz() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// 移动端tooltip位置调整 - 确保不超出卡片且最大宽度300px
+function adjustTooltipPosition() {
+    if (window.innerWidth <= 768) {
+        const tooltipIcons = document.querySelectorAll('.tooltip-icon');
+
+        tooltipIcons.forEach(icon => {
+            // 鼠标悬停时调整
+            icon.addEventListener('mouseenter', function() {
+                adjustSingleTooltip(this);
+            });
+
+            // 移动端触摸支持
+            icon.addEventListener('touchstart', function(e) {
+                e.stopPropagation();
+                adjustSingleTooltip(this);
+                this.classList.add('tooltip-active');
+
+                // 3秒后自动关闭
+                setTimeout(() => {
+                    this.classList.remove('tooltip-active');
+                }, 3000);
+            });
+        });
+    }
+}
+
+function adjustSingleTooltip(icon) {
+    const card = icon.closest('.card-body');
+    if (!card) return;
+
+    const cardRect = card.getBoundingClientRect();
+    const iconRect = icon.getBoundingClientRect();
+
+    // 计算icon右边缘到卡片左边缘的距离（这是tooltip向左延伸的最大空间）
+    const availableWidth = iconRect.right - cardRect.left - 20; // 减去20px作为左侧padding
+
+    // tooltip宽度 = min(300px, 可用宽度, 卡片宽度-40px)
+    const tooltipWidth = Math.min(300, availableWidth, cardRect.width - 40);
+
+    // 设置CSS变量
+    icon.style.setProperty('--tooltip-width', tooltipWidth + 'px');
+}
+
+// 页面加载时初始化
+document.addEventListener('DOMContentLoaded', adjustTooltipPosition);
+
+// 窗口大小改变时重新调整
+window.addEventListener('resize', adjustTooltipPosition);
+
 // 提示信息
 console.log('癌症风险评估问卷已加载');
 console.log('注意：本评估结果仅供参考，不能替代专业医疗诊断');

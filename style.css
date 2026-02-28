@@ -219,29 +219,74 @@ body {
         padding: 20px;
     }
 
-    /* 移动端 tooltip 样式调整 */
-    .tooltip-icon::before {
-        width: 280px;
-        right: auto;
-        left: 50%;
-        transform: translateX(-50%) translateY(5px);
-        font-size: 12px;
-        padding: 10px 12px;
+    /* 移动端禁用 hover 效果 */
+    .tooltip-icon:hover::before,
+    .tooltip-icon:hover::after {
+        opacity: 0;
+        visibility: hidden;
     }
 
-    .tooltip-icon:hover::before {
+    /* 移动端 tooltip 样式调整 - 防止超出屏幕 */
+    .tooltip-icon::before {
+        /* 改为显示在下方，避免顶部超出 */
+        bottom: auto;
+        top: calc(100% + 15px);
+        /* 使用更小的宽度，确保左右边距 */
+        width: auto;
+        min-width: 240px;
+        max-width: calc(100vw - 30px);
+        /* 居中显示但不超出屏幕 */
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%) translateY(-5px);
+        font-size: 12px;
+        padding: 10px 12px;
+        /* 默认隐藏 */
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* 点击后显示 tooltip - 使用 active 类 */
+    .tooltip-icon.tooltip-active::before,
+    .tooltip-icon.tooltip-active::after {
+        opacity: 1;
+        visibility: visible;
         transform: translateX(-50%) translateY(0);
     }
 
+    /* 箭头改到顶部，指向图标 */
     .tooltip-icon::after {
+        bottom: auto;
+        top: calc(100% + 7px);
         right: auto;
         left: 50%;
         transform: translateX(-50%);
+        /* 翻转箭头方向 */
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: none;
+        border-bottom: 8px solid #2c3e50;
+    }
+
+    /* 添加点击提示 */
+    .tooltip-icon {
+        cursor: pointer;
     }
 
     /* 移动端选项垂直排列 */
     .d-flex.gap-3 {
         flex-direction: column !important;
+    }
+}
+
+/* 更小屏幕（如窄手机）的额外调整 */
+@media (max-width: 480px) {
+    .tooltip-icon::before {
+        width: 240px;
+        max-width: calc(100vw - 30px);
+        font-size: 11px;
+        padding: 8px 10px;
+        line-height: 1.5;
     }
 }
 

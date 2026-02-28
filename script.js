@@ -138,6 +138,60 @@ function resetQuiz() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// 移动端 tooltip 位置优化
+function initMobileTooltips() {
+    // 只在移动设备上执行
+    if (window.innerWidth <= 768) {
+        const tooltipIcons = document.querySelectorAll('.tooltip-icon');
+
+        tooltipIcons.forEach(icon => {
+            // 移动端使用 click 而不是 hover
+            icon.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                // 切换 active 类来显示 tooltip
+                const isActive = this.classList.contains('tooltip-active');
+
+                // 先移除所有其他 tooltip 的 active 状态
+                document.querySelectorAll('.tooltip-icon').forEach(i => {
+                    i.classList.remove('tooltip-active');
+                });
+
+                // 切换当前 tooltip
+                if (!isActive) {
+                    this.classList.add('tooltip-active');
+                }
+            });
+        });
+
+        // 点击页面其他地方关闭 tooltip
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.tooltip-icon')) {
+                document.querySelectorAll('.tooltip-icon').forEach(icon => {
+                    icon.classList.remove('tooltip-active');
+                });
+            }
+        });
+    }
+}
+
+// 页面加载完成后初始化
+document.addEventListener('DOMContentLoaded', initMobileTooltips);
+
+// 窗口大小改变时重新初始化
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+        // 清除所有 active 状态
+        document.querySelectorAll('.tooltip-icon').forEach(icon => {
+            icon.classList.remove('tooltip-active');
+        });
+        initMobileTooltips();
+    }, 250);
+});
+
 // 提示信息
 console.log('癌症风险评估问卷已加载');
 console.log('注意：本评估结果仅供参考，不能替代专业医疗诊断');

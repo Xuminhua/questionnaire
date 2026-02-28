@@ -222,20 +222,27 @@ function adjustSingleTooltip(icon) {
     const availableWidth = cardWidth - 20; // 左右各留10px
     const tooltipWidth = Math.max(200, Math.min(300, availableWidth));
 
+    // 计算icon中心点相对于卡片左边的距离
+    const iconCenterRelativeToCard = iconRect.left - cardRect.left + iconRect.width / 2;
+
     let leftValue, rightValue, arrowLeftValue, arrowRightValue;
 
     if (isNearLeft) {
-        // icon靠近左边，tooltip左对齐，距离卡片左边10px
-        leftValue = '40px';
+        // icon靠近左边，tooltip左对齐，距离卡片左边20px
+        leftValue = '20px';
         rightValue = 'auto';
-        arrowLeftValue = '50px'; // 箭头在tooltip左边20px处
+        // 箭头位置 = icon中心相对于卡片 - tooltip左边距（40px）
+        const arrowLeft = iconCenterRelativeToCard - 40;
+        arrowLeftValue = arrowLeft + 'px';
         arrowRightValue = 'auto';
     } else {
-        // icon靠近右边，tooltip右对齐，距离卡片右边10px
+        // icon靠近右边，tooltip右对齐，距离卡片右边40px
         leftValue = 'auto';
-        rightValue = '40px';
+        rightValue = '20px';
+        // 箭头位置 = 卡片宽度 - icon中心相对于卡片 - tooltip右边距（40px）
+        const arrowRight = cardWidth - iconCenterRelativeToCard - 40;
         arrowLeftValue = 'auto';
-        arrowRightValue = '50px'; // 箭头在tooltip右边20px处
+        arrowRightValue = arrowRight + 'px';
     }
 
     // 设置CSS变量

@@ -226,16 +226,16 @@ function adjustSingleTooltip(icon) {
 
     if (isNearLeft) {
         // icon靠近左边，tooltip左对齐，距离卡片左边10px
-        leftValue = '10px';
+        leftValue = '40px';
         rightValue = 'auto';
-        arrowLeftValue = '20px'; // 箭头在tooltip左边20px处
+        arrowLeftValue = '50px'; // 箭头在tooltip左边20px处
         arrowRightValue = 'auto';
     } else {
         // icon靠近右边，tooltip右对齐，距离卡片右边10px
         leftValue = 'auto';
-        rightValue = '10px';
+        rightValue = '40px';
         arrowLeftValue = 'auto';
-        arrowRightValue = '20px'; // 箭头在tooltip右边20px处
+        arrowRightValue = '50px'; // 箭头在tooltip右边20px处
     }
 
     // 设置CSS变量

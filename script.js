@@ -211,14 +211,39 @@ function adjustSingleTooltip(icon) {
     const cardRect = card.getBoundingClientRect();
     const iconRect = icon.getBoundingClientRect();
 
-    // 计算icon右边缘到卡片左边缘的距离（这是tooltip向左延伸的最大空间）
-    const availableWidth = iconRect.right - cardRect.left - 20; // 减去20px作为左侧padding
+    const cardWidth = cardRect.width;
 
-    // tooltip宽度 = max(200px, min(300px, 可用宽度, 卡片宽度-40px))
-    const tooltipWidth = Math.max(200, Math.min(300, availableWidth, cardRect.width - 40));
+    // 判断icon是靠近左边还是右边（以卡片中心线为界）
+    const iconCenterX = iconRect.left + iconRect.width / 2;
+    const cardCenterX = cardRect.left + cardRect.width / 2;
+    const isNearLeft = iconCenterX < cardCenterX;
+
+    // 计算tooltip宽度（最小200px，最大300px，且不超出卡片）
+    const availableWidth = cardWidth - 20; // 左右各留10px
+    const tooltipWidth = Math.max(200, Math.min(300, availableWidth));
+
+    let leftValue, rightValue, arrowLeftValue, arrowRightValue;
+
+    if (isNearLeft) {
+        // icon靠近左边，tooltip左对齐，距离卡片左边10px
+        leftValue = '10px';
+        rightValue = 'auto';
+        arrowLeftValue = '20px'; // 箭头在tooltip左边20px处
+        arrowRightValue = 'auto';
+    } else {
+        // icon靠近右边，tooltip右对齐，距离卡片右边10px
+        leftValue = 'auto';
+        rightValue = '10px';
+        arrowLeftValue = 'auto';
+        arrowRightValue = '20px'; // 箭头在tooltip右边20px处
+    }
 
     // 设置CSS变量
     icon.style.setProperty('--tooltip-width', tooltipWidth + 'px');
+    icon.style.setProperty('--tooltip-left', leftValue);
+    icon.style.setProperty('--tooltip-right', rightValue);
+    icon.style.setProperty('--tooltip-arrow-left', arrowLeftValue);
+    icon.style.setProperty('--tooltip-arrow-right', arrowRightValue);
 }
 
 // 页面加载时初始化
